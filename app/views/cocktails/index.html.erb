@@ -1,24 +1,23 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('images/cocktail.jpg');">
+
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_tag("http://res.cloudinary.com/demo/image/upload/sample.jpg") %>');">
   <div class="banner-content">
-    <br/>
     <h1 class="text-center">Your cocktail list</h1>
-     <p class="text-center padded"><%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-primary" %>
-     </p>
-    <br/>
+    <p class="text-center padded"><%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-primary" %>
   </div>
 </div>
-</div>
 
-<div class="container">
+<div class="container padded">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-6 col-sm-4">
-        <div class="card text-center">
-          <div class="card-body">
-            <%= link_to cocktail.name, cocktail_path(cocktail) %>
-          </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path cocktail.picture %>');">
+        </div>
+        <div class="row">
+          <p class="card-title text-center"><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+

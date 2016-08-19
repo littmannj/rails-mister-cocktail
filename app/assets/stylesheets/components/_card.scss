@@ -1,11 +1,10 @@
 .card {
   height: 175px;
-  width: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
   position: relative;
-  margin-bottom: 10px;
+  border-radius: 2px;
 }
 .card-user {
   position: absolute;
@@ -42,3 +41,12 @@
 .card-link:hover{
   opacity: 0.1;
 }
+
+.card-title {
+  font-size: 15px;
+  text-transform: uppercase;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+

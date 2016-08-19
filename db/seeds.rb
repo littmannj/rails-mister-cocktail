@@ -1,28 +1,36 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+Cocktail.destroy_all
+Ingredient.destroy_all
+
+cocktails = [
+  {
+    name: "Gin tonic",
+    picture: "http://res.cloudinary.com/dvgxgsxyc/image/upload/v1471610036/gin-tonic.jpg"
+    },
+  {
+    name: "Cuba Libre",
+    picture: "http://res.cloudinary.com/dvgxgsxyc/image/upload/v1471610036/cuba.jpg"
+    },
+  {
+    name: "Vodka Soda Lime",
+    picture: "http://res.cloudinary.com/dvgxgsxyc/image/upload/v1471610036/vodka-soda.jpg"
+    },
+  {
+    name: "Rum Punch",
+    picture: "http://res.cloudinary.com/dvgxgsxyc/image/upload/v1471610036/rum-punch.jpg"
+    },
+  {
+    name: "White Russian",
+    picture: "http://res.cloudinary.com/dvgxgsxyc/image/upload/v1471610036/white-russian.jpg"
+    },
+  {
+    name: "Vodka Martini",
+    picture: "http://res.cloudinary.com/dvgxgsxyc/image/upload/v1471610036/vodka-martini.jpg"
+    },
+]
+
+ingredients = %w(lemon ice mint leaves redbull jagermeister sugar tonic gin rhum)
+ingredients.each { |ingredient| Ingredient.create(name: ingredient) }
 
 
-require 'faker'
-
-  cocktails = ["Gin tonic","Cuba Libre","Vodka Soda Lime","Rum Punch","White Russian","Vodka Martini"]
-
-  6.times do |i|
-     Cocktail.create(
-      name: cocktails[i]
-    )
-  end
-
-
-  ingredients = ["Lemon","Ice","Mint","Rum","Vodka","Tonic water"]
-
-  6.times do |i|
-     Ingredient.create(
-      name: ingredients[i]
-    )
-  end
-
+cocktails.each { |cocktail| Cocktail.create(cocktail) }
