@@ -1,12 +1,10 @@
-<h1 class="text-center" >Add new cocktail</h1>
-
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <%= simple_form_for @cocktail do |f| %>
-      <%= f.input :name, placeholder: "Vodka Martini" %>
-      <%= f.submit "submit", class: "btn btn-primary" %>
-      <% end %>
+      <h1>New Cocktail</h1>
+      <%= render 'form' %>
+      <%= link_to 'Back', cocktails_path %>
     </div>
   </div>
 </div>
+
